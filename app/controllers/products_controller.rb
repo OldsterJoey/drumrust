@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   # Only asks for authentication if attempting to post
   before_action :authenticate_user!, except: %i[ show index ]
-  before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_product, only: %i[ show ]
+  before_action :set_user_product, only: %i[ update edit destroy ]
   before_action :set_categories_and_conditions, only: %i[ new edit ]
 
   # GET /products or /products.json
@@ -64,6 +65,14 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
+    end
+
+    def set_user_product
+      @product = current_user.products.find_by_id(params[:id])
+      if @listing == nil
+        flash[:alert] = "That is not your product"
+        redirect_to products_path
+      end
     end
 
     def set_categories_and_conditions
