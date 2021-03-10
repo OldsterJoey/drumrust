@@ -1,29 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @product.category_id %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @product.condition %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div class = 'container d-flex flex-column flex-md-row px-2 my-2 my-md-5' >
+  <div class='content col-12 col-md-7 col-lg-8 p-0 pr-md-3'> 
+    <div class='col-12 p-0 main-preview mb-4'>
+      <img class = 'card-img top' class = 'thumbnail' src = 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80'>
+    </div>
+    <div class= 'sidebar col-lg-4 p-0 mx-2 d-md-block'>
+      <h1 class = 'mb-sm-2 mb-md-5'><%=@product.name%></h1>
+      <h4 class = 'text-muted'>Condition: <%=@product.condition.capitalize%></h4>
+      <p class = 'blockquote mt-2'><%=@product.description%></p>
+      <div>
+        <button class = 'btn btn-primary p-3'> Buy: $<%=@product.price%></button>
+      </div>
+    </div>
+  </div>
+  <div class='container'>
+    <div class ='d-flex justify-content-evenly'>
+    <%=link_to "Edit", edit_product_path(@product.id), class: "btn btn-warning mr-3" if current_user && current_user.id == @product.user_id%>
+    <%=link_to "Delete", @product, method: :delete, data: {confirm: "Are you sure?"} , class: "btn btn-danger mr-3" if current_user && current_user.id == @product.user_id%>
+  </div>
+</div>
