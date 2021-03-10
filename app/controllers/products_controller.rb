@@ -69,7 +69,7 @@ class ProductsController < ApplicationController
 
     def set_user_product
       @product = current_user.products.find_by_id(params[:id])
-      if @listing == nil
+      if @product == nil
         flash[:alert] = "That is not your product"
         redirect_to products_path
       end
