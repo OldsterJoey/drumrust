@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'profile/show'
+  get 'profile/edit'
   devise_for :users
   root to: "pages#home"
   resources :products
