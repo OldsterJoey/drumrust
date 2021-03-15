@@ -14,7 +14,3 @@ if Category.count == 0
         puts "created #{category} category"
     end
 end
-
-if User.count == 0
-    User.create(email: "joey@test.com", password: "123123", password_confirmation: "123123")
-end
