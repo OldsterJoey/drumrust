@@ -7,8 +7,11 @@
       <h1 class = 'mb-sm-2 mb-md-5'><%=@product.name%></h1>
       <h4 class = 'text-muted'>Condition: <%=@product.condition.capitalize%></h4>
       <p class = 'blockquote mt-2'><%=@product.description%></p>
-      <div>
-        <button class = 'btn btn-primary p-3'> Buy: $<%=@product.price%></button>
+          <%if current_user%>
+            <button data-stripe="payment" data-session-id=<%=@session_id%> data-public-key=<%=Rails.application.credentials.dig(:stripe, :public_key)%> class='btn btn-primary p-3'> Buy: $<%=@product.price%></button>
+          <%else%>
+            <%=button_to "Login to buy", new_user_session_path, class: "btn btn-info" %>
+          <%end%>
       </div>
     </div>
   </div>
@@ -18,3 +21,19 @@
     <%=link_to "Delete", @product, method: :delete, data: {confirm: "Are you sure?"} , class: "btn btn-danger mr-3" if current_user && current_user.id == @product.user_id%>
   </div>
 </div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    const button = document.querySelector("[data-stripe='payment']");
+    if (button) {
+      button.addEventListener("click", () => {
+        const stripe = Stripe(
+          "<%=Rails.application.credentials.dig(:stripe, :public_key)%>"
+        );
+        stripe.redirectToCheckout({
+          sessionId: "<%= @session_id%>"
+        });
+    });
+    }
+   
+</script>
