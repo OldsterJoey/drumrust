@@ -7,8 +7,10 @@
       <h1 class = 'mb-sm-2 mb-md-5'><%=@product.name%></h1>
       <h4 class = 'text-muted'>Condition: <%=@product.condition.capitalize%></h4>
       <p class = 'blockquote mt-2'><%=@product.description%></p>
-          <%if current_user%>
+          <%if current_user && @product.paid == false%>
             <button data-stripe="payment" data-session-id=<%=@session_id%> data-public-key=<%=Rails.application.credentials.dig(:stripe, :public_key)%> class='btn btn-primary p-3'> Buy: $<%=@product.price%></button>
+          <%elsif current_user && @product.paid == true%>
+            <button class = 'btn btn-secondary' disabled>SOLD</button>
           <%else%>
             <%=button_to "Login to buy", new_user_session_path, class: "btn btn-info" %>
           <%end%>
