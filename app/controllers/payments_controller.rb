@@ -9,5 +9,6 @@ class PaymentsController < ApplicationController
         buyer_id = payment.metadata.user_id
         puts "product: #{payment.metadata.product_id}"
         puts "buyer: #{payment.metadata.user_id}"
+        Purchase.create(user_id: buyer_id, product_id: product_id, payment_intent_id: payment_intent_id, receipt_url: payment.charges.data[0].receipt_url)
     end
 end
