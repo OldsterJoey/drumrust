@@ -1,21 +1,23 @@
-<h1 class = 'hero-title text-center'> Products </h1>
-<div class = 'container'>
-  <div class = 'row row-cols-sm-1 row-cols-md-2 row-cols-lg-4'>
-    <% @products.each do |product| %>
-      <div class = 'col mb-4'>
-        <div class = 'card border-dark h-100'>
-        <%=image_tag product.picture, class:"thumbnail card-img top"%>
-          <div class ='card-body'>
-            <h5><%= product.name %></h5>
-            <h6 class='card-subtitle my-2 text-muted'> Added <%=time_ago_in_words(product.created_at)%> ago </h6>
-            <p class='card-text text-secondary text-truncate'><%=product.description%></p>
-            <div class='d-flex justify-content-between'>
-            <%=link_to "See More", product_path(product.id), class: "btn btn-outline-primary"%>
-            <h5> $<%=product.price%> </h5>
+<section class = 'products min-vh-100'>
+  <h1 class = 'hero-title text-center'> Products </h1>
+  <div class = 'container'>
+    <div class = 'row row-cols-sm-1 row-cols-md-2 row-cols-lg-4'>
+      <% @products.each do |product| %>
+        <div class = 'col mb-4'>
+          <div class = 'card border-dark h-100'>
+          <%=image_tag product.picture, class:"thumbnail card-img top"%>
+            <div class ='card-body'>
+              <h5><%= product.name %></h5>
+              <h6 class='card-subtitle my-2 text-muted'> Added <%=time_ago_in_words(product.created_at)%> ago </h6>
+              <p class='card-text text-secondary text-truncate'><%=product.description%></p>
+              <div class='d-flex justify-content-between'>
+              <%=link_to "See More", product_path(product.id), class: "btn btn-outline-primary"%>
+              <h5> $<%=product.price%> </h5>
+              </div>
             </div>
           </div>
-        </div>
-      </div> 
-    <% end %>
+        </div> 
+      <% end %>
+    </div>
   </div>
-</div>
+</section>
