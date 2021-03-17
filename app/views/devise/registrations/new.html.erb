@@ -1,15 +1,19 @@
-<h2>Sign up</h2>
+<h2 class = 'container d-flex justify-content-center'>Sign up</h2>
 
+<div class = 'container d-flex justify-content-center'>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <%= f.fields_for :user_profile, UserProfile.new do |profile_f| %>
-    <li>
+    <div class='field'>
       <%= profile_f.label :first_name %>
       <%= profile_f.text_field :first_name %>
+    </div>
+
+    <div class='field'>
       <%= profile_f.label :last_name %>
       <%= profile_f.text_field :last_name %>
-    </li>
+    </div>
   <% end %>
 
   <div class="field">
@@ -34,5 +38,7 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
+</div>
+<div class = 'container d-flex justify-content-center'>
 <%= render "devise/shared/links" %>
+</div>

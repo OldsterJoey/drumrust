@@ -2,7 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.homeimg {
-    width: 30%;
-    height: 30%;
+.categories {
+    background-color: #080202;
+    padding: 80px 0;
+}
+
+.category-item {
+    padding: 20px
 }
