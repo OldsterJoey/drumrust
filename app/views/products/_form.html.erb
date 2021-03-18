@@ -35,7 +35,7 @@
 
   <div class="form-check form-check-line mb-3">
     <%conditions.each do |option|%>
-    <%= form.label :condition, option.capitalize, class:"form-label mr-1" %>
+    <%= form.label :condition, format_condition(option), class:"form-label mr-1" %>
     <%= form.radio_button :condition, option, class:"mr-2" %>
     <%end%>
   </div>

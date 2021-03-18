@@ -10,3 +10,7 @@
 .category-item {
     padding: 20px
 }
+
+.col:hover {
+    transform: translateY(8px) scale(1.05) translateZ(0);
+}
