@@ -14,3 +14,7 @@ if Category.count == 0
         puts "created #{category} category"
     end
 end
+
+if Product.count == 0
+
+end

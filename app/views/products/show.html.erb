@@ -4,10 +4,10 @@
       <div class='col-12 p-0 main-preview mb-4'>
         <%=image_tag @product.picture%>
       </div>
-      <div class= 'sidebar col-lg-4 p-0 mx-2 d-md-block'>
-        <h1 class = 'mb-sm-2'><%=@product.name%></h1>
-        <h5 class = 'text-muted'>Condition: <%=@product.condition.capitalize%></h4>
-        <p class = 'blockquote mt-2'><%=@product.description%></p>
+      <div>
+        <h1 class = 'mb-sm-2 text-white'><%=@product.name%></h1>
+        <p class = 'text-white mt-3'>Condition: <%=@product.condition.capitalize%></p>
+        <h5 class = 'blockquote mt-2 text-white'><%=@product.description%></h5>
             <%if current_user && @product.paid == false%>
               <button data-stripe="payment" data-session-id=<%=@session_id%> data-public-key=<%=Rails.application.credentials.dig(:stripe, :public_key)%> class='btn btn-primary p-3'> Buy: $<%=@product.price%></button>
             <%elsif current_user && @product.paid == true%>

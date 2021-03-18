@@ -1,2 +1,6 @@
-<p> Successfully paid for<%=@product.name%> </p>
-<%= link_to "View Receipt", @paid.receipt_url, target: :_blank %>
+<div class = 'min-vh-100 receipt-page'>    
+    <div class = 'container d-flex flex-column align-items-center text-white pt-5'>
+        <h4> Successfully paid for <%=@product.name%> </h4>
+        <%= link_to "View Receipt", @paid.receipt_url, target: :_blank, class: 'pt-5' %>
+    </div>
+</div>
