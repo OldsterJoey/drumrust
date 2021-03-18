@@ -1,35 +1,11 @@
 <section class = "categories min-vh-100">
     <div class = "container-lg">
         <div class = "row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
-            <%= link_to products_path(:category => 'Guitar') do %>
-                <div class = "col">
-                    <%=image_tag "guitar.jpeg", alt: "Guitar", class:"category-item img-fluid"%>
-                    <h3 class="centered text-white">Guitars</h3>
-                </div>
-            <% end %>
-            <%= link_to products_path do %>
-                <div class = "col">
-                    <%=image_tag "drums.jpeg", alt: "Guitar", class:"category-item img-fluid"%>
-                    <h3 class="centered text-white">Drums</h3>
-                </div>
-            <% end %>
-            <%= link_to products_path do %>
-                <div class = "col">
-                    <%=image_tag "piano.jpeg", alt: "Guitar", class:"category-item img-fluid"%>
-                    <h3 class="centered text-white">Pianos/Keyboards</h3>
-                </div>
-            <% end %>
-            <%= link_to products_path do %>
-                <div class = "col">
-                    <%=image_tag "amp.jpeg", alt: "Guitar", class:"category-item img-fluid"%>
-                    <h3 class="centered text-white">Amplifiers</h3>
-                </div>
-            <% end %>
-            <%= link_to products_path do %>
-                <div class = "col">
-                    <%=image_tag "accessories.jpeg", alt: "Guitar", class:"category-item img-fluid"%>
-                    <h3 class="centered text-white">Accessories</h3>
-                </div>
+            <% Category.all.each do |cat| %>
+            <div class = "col">
+            <%= link_to cat.name, products_path(category: cat.name), class: 'centered text-white h1' %>
+            <%=image_tag "#{cat.name}.jpeg", alt: "Guitar", class:"category-item img-fluid"%>
+            </div>
             <% end %>
         </div>
     </div>

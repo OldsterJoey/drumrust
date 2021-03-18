@@ -7,7 +7,12 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+    if params.has_key?(:category)
+      @category = Category.find_by_name(params[:category])
+      @products = Product.where(category: @category)
+    else
+      @products = Product.all
+    end
   end
 
   # Search functionality for /products

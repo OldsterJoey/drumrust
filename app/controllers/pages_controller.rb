@@ -9,3 +9,12 @@ class PagesController < ApplicationController
     @paid = Purchase.find_by_product_id(product_id)
   end
 end
+
+def categorize
+  if params.has_key?(:category)
+    @category = Category.find_by_name(params[:category])
+    @product = Product.where(category: @category)
+  else
+    @product = Product.all
+  end
+end
