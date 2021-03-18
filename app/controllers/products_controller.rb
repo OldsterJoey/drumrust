@@ -10,6 +10,11 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  # Search functionality for /products
+  def search
+    @products = Product.where("name LIKE ?", "%" + params[:q] + "%")
+  end
+
   # GET /products/1 or /products/1.json
   def show
     stripe_session = Stripe::Checkout::Session.create(

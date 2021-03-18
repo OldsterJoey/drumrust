@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :products
   post 'payments/webhook', to: 'payments#webhook'
   get 'payments/success', to: 'pages#payment_success'
+  get 'search', to: 'products#search'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
