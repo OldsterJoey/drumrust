@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
 
   # Search functionality for /products
   def search
-    @products = Product.where("name LIKE ?", "%" + params[:q] + "%")
+    @products = Product.where("UPPER(name) LIKE ?", "%" + params[:q].upcase + "%")
   end
 
   # GET /products/1 or /products/1.json
