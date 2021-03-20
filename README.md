@@ -64,10 +64,10 @@ Provide a resale platform for Australian musicians and music hobbyists and form 
   
 #### Screenshots
 
- ![image](app/assets/images/screenshot1)
- ![image](app/assets/images/screenshot2)
- ![image](app/assets/images/screenshot3)
- ![image](app/assets/images/screenshot4)
+ ![image](app/assets/images/screenshot1.png)
+ ![image](app/assets/images/screenshot2.png)
+ ![image](app/assets/images/screenshot3.png)
+ ![image](app/assets/images/screenshot4.png)
   
 
 #### Target audience
@@ -114,15 +114,15 @@ Specifically targeted towards musicians and music hobbyists within Australia
 
 #### Wireframes
 
-![image](app/assets/images/drumrustwireframe1)
-![image](app/assets/images/drumrustwireframe2)
-![image](app/assets/images/drumrustwireframe3)
-![image](app/assets/images/drumrustwireframe4)
-![image](app/assets/images/drumrustwireframe5)
+![image](app/assets/images/drumrustwireframe1.png)
+![image](app/assets/images/drumrustwireframe2.png)
+![image](app/assets/images/drumrustwireframe3.png)
+![image](app/assets/images/drumrustwireframe4.png)
+![image](app/assets/images/drumrustwireframe5.png)
 
 #### Entity Relational Diagram
 
-![image](app/assets/images/drumrust-erd)
+![image](app/assets/images/drumrust-erd.png)
 
 #### High-level components
 
@@ -163,12 +163,12 @@ Link: [https://trello.com/b/QMXDQ2Ip/drumrust-marketplace](https://trello.com/b/
 
 Early Development
 
-![image](app/assets/images/trello1)
+![image](app/assets/images/trello1.png)
 
 Mid Stage Development
 
-![image](app/assets/images/trello2)
+![image](app/assets/images/trello2.png)
 
 Late Development
 
-![image](app/assets/images/trello3)
+![image](app/assets/images/trello3.png)
