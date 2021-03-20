@@ -99,7 +99,7 @@ class ProductsController < ApplicationController
     def set_product
       @product = Product.find(params[:id])
     end
-
+    # Identifies whether a product belongs to the specific user, and redirects back to products page
     def set_user_product
       @product = current_user.products.find_by_id(params[:id])
       if @product == nil
@@ -107,7 +107,7 @@ class ProductsController < ApplicationController
         redirect_to products_path
       end
     end
-
+    # Standard method to set the categories and conditions applicable to a product
     def set_categories_and_conditions
       @categories = Category.all
       @conditions = Product.conditions.keys

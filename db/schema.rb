@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_145945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
+  # The next two tables down are a specific requirement for functional active storage use
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 2021_03_16_145945) do
     t.bigint "byte_size", null: false
     t.string "checksum", null: false
     t.datetime "created_at", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
-
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true # t.index format is a way to speed up database compilation speed, sacrificing an extra amount of database space 
+  end                                                                        # in the process. This is called 'indexing'. All indexed fields significantly speed up our applications access to 
+                                                                             # the indexed information.
   create_table "addresses", force: :cascade do |t|
     t.integer "street_number"
     t.string "street_name"
@@ -68,9 +68,9 @@ ActiveRecord::Schema.define(version: 2021_03_16_145945) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.boolean "paid", default: false
-    t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["user_id"], name: "index_products_on_user_id"
-  end
+    t.index ["category_id"], name: "index_products_on_category_id" # Table fields within brackets as seen here represent a foreign key, showing that they have a relationship with another table.
+    t.index ["user_id"], name: "index_products_on_user_id"         # The information we get on these relationships is limited within the schema, and are shown these relationships in much more
+  end                                                              # Detail within the model files for these tables.
 
   create_table "purchases", force: :cascade do |t|
     t.bigint "user_id", null: false

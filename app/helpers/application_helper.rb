@@ -1,4 +1,5 @@
 module ApplicationHelper
+    # Calls the required alert class dependent on the alert type
     def select_alert_subclass(input)
         case input 
         when 'notice'

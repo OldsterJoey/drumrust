@@ -3,7 +3,7 @@ class UserProfileController < ApplicationController
   
   def show
   end
-
+  # Allows for the alteration of a users profile
   def update
     respond_to do |format|
       if @user_profile.update(user_profile_params)
@@ -20,11 +20,11 @@ class UserProfileController < ApplicationController
   end
 
   private
-
+  # Sets a user profile for the logged in user
   def set_user_profile
     @user_profile = current_user.user_profile
   end
-
+  # Provides required parameters from the user profile to the user
   def user_profile_params
     params.require(:user_profile).permit(:first_name, :last_name)
   end

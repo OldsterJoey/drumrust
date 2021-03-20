@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
     skip_before_action :verify_authenticity_token, only: [:webhook]
+    # The method called to utilise ultrahook webhook for third party communication between Stripe and the application
     def webhook
         payment_intent_id = params[:data][:object][:payment_intent]
         pp params[:data][:object][:charges]

@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     @paid = Purchase.find_by_product_id(product_id)
   end
 end
-
+# Allows sorting of Products by category
 def categorize
   if params.has_key?(:category)
     @category = Category.find_by_name(params[:category])
