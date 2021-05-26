@@ -2478,13 +2478,12 @@
   "resolved" "https://registry.npmjs.org/dns-equal/-/dns-equal-1.0.0.tgz"
   "version" "1.0.0"
 
-"dns-packet@^1.3.1":
-  "integrity" "sha512-dDwDMOJU+m6Qx+LhltSV+BWNrMaTqx3eXkAqgt/iouWTXGZMffg1rOSnG2xa3lWqmJ9xTBc7fgIe/css4S1rxA=="
-  "resolved" "https://registry.npmjs.org/dns-packet/-/dns-packet-1.3.3.tgz"
-  "version" "1.3.3"
+"dns-packet@^5.2.2", "dns-packet@^5.2.3":
+  "integrity" "sha512-qrcTxpFwILBjWasLSVQmBXTI8XVLP9Tbmyv9Mvb41Exnl7yLqQ5UkXV7Jf+Ak14PBwoeOfCpMZZCzqUQVX40Zw=="
+  "resolved" "https://registry.npmjs.org/dns-packet/-/dns-packet-5.2.3.tgz"
+  "version" "5.2.3"
   dependencies:
-    "ip" "^1.1.0"
-    "safe-buffer" "^5.0.1"
+    "ip" "^1.1.5"
 
 "dns-txt@^2.0.2":
   "integrity" "sha1-uR2Ab10nGI5Ks+fRB9iBocxGQrY="
@@ -3467,7 +3466,7 @@
   "resolved" "https://registry.npmjs.org/ip-regex/-/ip-regex-2.1.0.tgz"
   "version" "2.1.0"
 
-"ip@^1.1.0", "ip@^1.1.5":
+"ip@^1.1.5":
   "integrity" "sha1-vd7XARQpCCjAoDnnLvJfWq7ENUo="
   "resolved" "https://registry.npmjs.org/ip/-/ip-1.1.5.tgz"
   "version" "1.1.5"
@@ -4263,7 +4262,7 @@
   "resolved" "https://registry.npmjs.org/multicast-dns/-/multicast-dns-6.2.3.tgz"
   "version" "6.2.3"
   dependencies:
-    "dns-packet" "^1.3.1"
+    "dns-packet" "^5.2.2"
     "thunky" "^1.0.2"
 
 "nan@^2.12.1":
